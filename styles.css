@@ -1,0 +1,73 @@
+body {
+  font-size: 0.875rem;
+}
+
+text {
+  font-size: 0.85rem;
+}
+
+#subtitle {
+  line-height: 200%;
+}
+
+.container-xl {
+  max-width: 1140px;
+}
+
+.position-sticky {
+  z-index: 1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+.chart-wrapper {
+  position: relative;
+}
+
+.chart-svg {
+  max-width: 100%;
+  height: auto;
+  height: intrinsic;
+}
+
+.choropleth-map.land-path {
+  fill: #f8f9fa;
+  stroke: #ccc;
+  stroke-width: 0.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.choropleth-map .border-path {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 0.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.choropleth-map .country-path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.choropleth-map .country-path:hover {
+  stroke: currentColor;
+}
+
+.choropleth-map .flow-path {
+  pointer-events: none;
+  fill: none;
+  stroke: lightgreen;
+  stroke-width: 1.5px;
+}
+
+.visualization-tooltip {
+  position: absolute;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  max-width: 20rem;
+  pointer-events: none;
+}
