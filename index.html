@@ -60,15 +60,31 @@
             <div>Dataset Range (MM/YYYY):  01/1961 to 08/2019</div>
           </div>
         </div>
-        <!--  Choropleth Chart -->
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <div class="vstack gap-3">
-              <div id="choroplethDateInput"></div>
-              <div id="choroplethChartArea"></div>
+          <!--  Choropleth Chart -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="vstack gap-3">
+                <div id="choroplethDateInput"></div>
+                <div id="choroplethChartArea"></div>
+              </div>
             </div>
           </div>
-        </div>
+          <!-- Slope Chart -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="vstack gap-3">
+                <div class="hstack gap-2 align-items-start flex-wrap flex-column">
+                  <h4>Percentage Change For Different Countries Between 2 Dates</h4>
+                  <div class="d-flex flex-row">
+                    <div id="slopeChartLeftDateInput"></div>
+                  <div class="pt-4">Compare With</div>
+                  <div id="slopeChartRightDateInput"></div>
+                  </div>
+                </div>
+                <div id="slopeChartArea"></div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
     <!-- Bootstrap -->
@@ -86,6 +102,8 @@
     <script src="scripts/date-input.js"></script>
     <script src="scripts/tooltip.js"></script>
     <script src="scripts/render-choropleth-map.js"></script>
+    <script src="scripts/render-slope-chart.js"></script>
+    <script src="scripts/slope-chart.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>

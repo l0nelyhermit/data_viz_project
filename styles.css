@@ -71,3 +71,25 @@ text {
   max-width: 20rem;
   pointer-events: none;
 }
+
+#slopeChartLeftDateInput {
+  margin-right: 10px !important;
+}
+#slopeChartRightDateInput {
+  margin-left: 10px !important;
+}
+
+.slope-chart .slope-path {
+  stroke-width: 1.5px;
+}
+
+.muted:not(line),
+.muted:not(path) {
+  fill: #ddd;
+}
+
+line.muted,
+path.muted {
+  stroke: #ddd;
+  fill: none;
+}

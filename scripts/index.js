@@ -32,6 +32,7 @@ Promise.all([
   .then(([worldMap, ...csvs]) => {
     const data = processDataset(csvs);
     renderMap(worldMap, data);
+    renderSlopeChart(data);
   })
   .catch((error) => {
     console.log(error);
