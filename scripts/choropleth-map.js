@@ -29,7 +29,7 @@ class ChoroplethMap {
       ),
     };
 
-    this.singapore = this.features.features.find((d) => d.id === "702");
+    // this.singapore = this.features.features.find((d) => d.id === "702");
 
     this.color = d3.scaleSequential(d3.interpolateReds);
 
@@ -60,7 +60,6 @@ class ChoroplethMap {
       .attr("fill", "lightblue");
 
     this.mapGroup = this.svg.append("g");
-    this.flowGroup = this.svg.append("g");
 
     this.tooltip = new Tooltip();
 
@@ -106,16 +105,6 @@ class ChoroplethMap {
     this.displayData = this.data.filter(
       (d) => d.direction === this.inputDirection && this.selectedDate === d.date
     );
-
-    this.flows = this.displayData
-      .filter((d) => d.value !== null)
-      .map((d) => {
-        const feature = this.dataFeatures.features.find((e) => e.id === d.code);
-        const makeOutward = this.inputDirection === "departures";
-        const source = makeOutward ? this.singapore : feature;
-        const target = makeOutward ? feature : this.singapore;
-        return { source, target };
-      });
 
     this.values = d3.map(this.displayData, (d) => d.value);
     this.colorDomain = [0, d3.max(this.values)];
@@ -173,21 +162,6 @@ class ChoroplethMap {
       })
       .on("mouseleave", () => {
         this.tooltip.hide();
-      });
-
-    this.flowGroup
-      .selectAll(".flow-path")
-      .data(this.flows)
-      .join("path")
-      .attr("class", "flow-path")
-      .attr("marker-end", "url(#flow-path-marker)")
-      .attr("d", (d) => {
-        const [sourceX, sourceY] = this.path.centroid(d.source);
-        const [targetX, targetY] = this.path.centroid(d.target);
-        const dx = targetX - sourceX;
-        const dy = targetY - sourceY;
-        const dr = Math.sqrt(dx * dx + dy * dy);
-        return `M${sourceX},${sourceY}A${dr},${dr} 0 0,1 ${targetX},${targetY}`;
       });
   }
 }
